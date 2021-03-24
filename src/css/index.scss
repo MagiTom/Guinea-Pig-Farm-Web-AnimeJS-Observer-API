@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+
+$mainColor: rgba(241, 231, 229, 1);
+$secondColor: rgba(0,0,0,1);
+$fontColor: rgba(0,0,0,1); 
+
+$tablet: 768px;
+$laptop: 1200px;
+$monitor: 1400px;
+
+
+@mixin flex($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-around;
+  align-items: center;
+ 
+}
+
+@mixin imageSize() {
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@mixin paragraph {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  letter-spacing: 2px;
+}
+
+*, *::before, *::after{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+  @include paragraph();
+}
+
+section, footer{
+  text-align: justify;
+  margin-top: 2em;
+  @media (min-width: $tablet){
+    text-align: left;
+    padding: 0 6em;
+   }
+}
+
+section p{
+  opacity: 0;
+}
+
+.row{
+  @include flex(column);
+  margin-top: 2em;
+  padding: 0 1em;
+  @media (min-width: $tablet){
+    @include flex(row);
+  }
+}
+
+.col{
+  @include flex(column);
+  @media (min-width: $tablet){
+    padding: 2em;
+    text-align: center;
+  }
+}
+
+.header_bg{
+  background-color: $mainColor;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+
+nav{
+  display: flex;
+  padding: 1rem;
+ 
+  @media (min-width: $tablet){
+   position: relative;
+   padding: 0;
+   align-items: center;
+      }
+
+  .nav_scrolled{
+    box-shadow: 0 0 9px rgba(0,0,0,0.2);
+    font-size: 0.9rem;
+    transition: 0.5s linear;
+  }   
+  
+  .nav{
+    margin-left: auto;
+    width: 100%;
+    background: $mainColor;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    display: none;
+    position: fixed;
+    z-index: 10;
+    transition: all 0.5s ease-in;
+    @media (min-width: $tablet){
+      display: block;
+      @include flex(row);
+      justify-content: flex-start;
+      padding: 2em;
+        }
+    &__item{
+      @include flex(column);
+      margin-top: 1em;
+border-bottom: 1px solid rgba(0,0,0,0.1);
+@media (min-width: $tablet){
+ margin: 0;
+ margin-right: 2em;
+ padding: 0;
+ border: none;
+
+    }
+      a{
+        text-decoration: none;
+        color: $fontColor;
+        padding: 0.2em;
+        transition: 0.3s;
+        &:hover{
+          color: coral;
+          }
+      }
+    }
+   &__social{
+     @include flex();
+     margin-top: 2em;
+     @media (min-width: $tablet){
+      margin: 0;
+      margin-left: auto;
+      cursor: pointer;
+        }
+   }
+    .fa-window-close{
+      font-size: 2rem;
+      @media (min-width: $tablet){
+        display: none;
+          }
+    }
+    .fab{
+      font-size: 2rem;
+      @media (min-width: $tablet){
+        margin-left: 1em;
+        font-size: 1.5rem;
+        transition: 0.3s;
+          }
+          &:hover{
+            scale: 1.2;
+          }
+    }
+  }
+ 
+ 
+ 
+}
+
+.logo b{
+  font-size: 1.5rem;
+  font-weight: 800;
+
+}
+
+.phone__nav{
+display: flex;
+justify-content: space-between;
+flex-direction: row-reverse;
+
+.logo{
+  padding: 1rem;
+  @media (min-width: $tablet){
+margin: 0 auto;
+z-index: 100;
+      }
+}
+.fa-bars{
+  margin-left: auto;
+  font-size: 3rem;
+  padding: 1rem;
+  position: fixed;
+  z-index: 10;
+  @media (min-width: $tablet){
+    display: none;
+      }
+}
+}
+
+
+
+.hero{
+  &__text{
+   @include flex(column);
+   align-items: flex-start;
+   margin: 2rem;
+   position: absolute;
+top: 10%;
+@media (min-width: $tablet){
+  left: 52%;
+  top: 20%;
+    }
+   span p{
+     background-color: white;
+     margin-top: 1rem;
+     text-transform: uppercase;
+     font-weight: 600;
+     font-size: 2rem;
+ 
+     overflow: hidden;
+     @media (min-width: $tablet){
+      font-size: 3rem;
+      padding: 0 0.5em;
+        }
+   }
+  
+  }
+&__image{
+margin-top: 30%;
+ width: 100%;
+ height: 330px;
+ background: url(../assets/img/hero.jpg);
+ background-repeat: no-repeat;
+ @media (min-width: $tablet){
+  margin-top: 5%;
+  width: 50%;
+ height: 500px;
+ background-size: cover;
+ margin-left: 10%;
+    }
+}
+}
+
+#about{
+  .about__content{
+    padding: 0 1em;
+    margin-top: 2em;
+    @media (min-width: $tablet){
+      padding: 0 4em;
+      text-align: center;
+      margin-top: 8em;
+     }
+ 
+    p{
+      margin-top: 1em;
+    }
+  }
+
+  .col p{
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding-bottom: 1em;
+    margin-top: 1em;
+    @media (min-width: $tablet){
+      border-bottom: none;
+     }
+  }
+
+  .img1{
+  background: url(../assets/img/pig1.jpg);
+ 
+  }
+
+  .img2{
+    background: url(../assets/img/pig2.jpg);
+    @include imageSize();
+  }
+
+  .img3{
+    background: url(../assets/img/pig3.jpg);
+    @include imageSize();
+  }
+
+  .img1, .img2, .img3{
+    @include imageSize();
+    margin-top: 2em;
+  }
+
+  h5{
+    margin-top: 2em;
+    font-weight: 800;
+  }
+}
+
+#pigs{
+ 
+  @media (min-width: $laptop){
+    padding: 0;
+    margin: 6em 0;
+   }
+  .image_border{
+    margin-top: 1em;
+    background: url(../assets/img/pigs_section.jpg);
+    width: 70%;
+    height: 350px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 10px solid white;
+    @media (min-width: $laptop){
+      position: absolute;
+      height: 500px;
+      width: 25%;
+      left: 11em;
+      top: 3em;
+     }
+  }
+  .row{
+    background: $mainColor;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $laptop){
+      height: 500px;
+      position: relative;
+      z-index: 1;
+     }
+  }
+
+  .content_box{
+    margin: 2em 0;
+    background: white;
+    padding: 2em 1em;
+    font-size: 1rem;
+    @media (min-width: $laptop){
+      position: absolute;
+      height: inherit;
+      width: 30%;
+      height: unset;
+      right: 11em;
+      top: 3em;
+      padding: 3em;
+     }
+  }
+}
+
+.image_bg{
+  display: none;
+  @media (min-width: $laptop){
+    position: absolute;
+    display: block;
+    height: 600px;
+    width: 400px;
+    background: $mainColor;
+    z-index: -1;
+   }
+}
+
+.img{
+  @media (min-width: $laptop){
+    height: 600px;
+    width: 400px;
+    z-index: 10;
+    background: url(../assets/img/Zas.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+   }
+}
+
+.btn{
+  font-size: 1rem;
+  padding: 1em 2em;
+  margin-top: 2em;
+  color: white;
+  background: $secondColor;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  &--light{
+    background: $mainColor;
+    color: $fontColor;
+  }
+  &:hover{
+    transform: scale(1.1);
+  }
+}
+
+#litter{
+  @media (min-width: $tablet){
+    position: relative;
+     }
+  h1{
+    text-align: center;
+    position: relative;
+    &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 60%;
+      left:50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 0.7em;
+      z-index: -1;
+      background: $mainColor;
+      @media (min-width: $tablet){
+     width: 100%;
+         }
+    }
+    @media (min-width: $tablet){
+      position: absolute;
+      left: 0;
+      top: 45%;
+      transform: rotate(-90deg) translate(0, -45%);
+      font-size: 2.5rem;
+       }
+  }
+
+  .img1{
+    background: url(../assets/img/pair1.jpg);
+  }
+
+  .img2{
+    background: url(../assets/img/pair2.jpg);
+    margin-top: 4em;
+  }
+
+  .img3{
+    background: url(../assets/img/pair3.jpg);
+    margin-top: 4em;
+  }
+
+  .image{
+    @include imageSize();
+    @media (min-width: $tablet){
+    margin: 2em 0;
+     }
+  }
+
+  .col{
+    position: relative;
+  }
+
+  .btn{
+position: absolute;
+top: 85%;
+  }
+}
+
+#contact{
+  background: $mainColor;
+  padding: 2em;
+  @media (min-width: $tablet){
+    margin: 6em 0;
+    padding: 3em;
+     }
+  form{
+    @include flex(column);
+    background-color: white;
+    margin: 0 auto;
+    @media (min-width: $tablet){
+     width: 50%;
+     padding: 1em;
+       }
+  }
+  form > *{
+    margin: .5em 0;
+  }
+  .form-group{
+    width: 100%;
+    display: flex;
+  flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  input, textarea{
+    border: 1px solid rgba(0,0,0,0.2);
+    padding: .7em;
+    width: 80%;
+  }
+  textarea{
+    height: 8em;
+  }
+
+  .error-text{
+    color: red;
+    font-size: 0.5rem;
+  }
+}
+
+
+footer{
+background: $secondColor;
+color: rgba(255,255,255, 0.5);
+@include flex(column);
+@media (min-width: $tablet){
+  @include flex(row);
+  align-items:baseline;
+    }
+
+.col:last-child > *{
+  margin-top: 1em;
+}
+
+.col:last-child{
+  padding-bottom: 2em;
+  @media (min-width: $tablet){
+    @include flex(row);
+      }
+}
+.col{@media (min-width: $tablet){
+  margin: 0;
+  padding: 0;
+    }
+}
+.fab{
+  @media (min-width: $tablet){
+    margin-left: 1em;
+    font-size: 1.5em;
+      }
+      &:hover{
+        color: white;
+      }
+}
+}
+
+
+
+
+.error{
+  color: red;
+}
+
+#info{
+  visibility: hidden;
+  color: green;
+}
+

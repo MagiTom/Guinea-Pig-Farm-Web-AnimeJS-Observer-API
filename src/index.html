@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guinea Pig</title>
+  <script src="https://kit.fontawesome.com/e1b72a7d93.js" crossorigin="anonymous"></script>
+  <script src="../node_modules/animejs/lib/anime.min.js"></script>
+</head>
+
+<body>
+  <!-- npm install sass-loader@^7.1.0 node-sass --save -->
+
+  <header>
+
+    <div class="header_bg"></div>
+    <div class="phone__nav">
+      <i class="fas fa-bars"></i>
+      <div class="logo">cavia<b>logo</b></div>
+    </div>
+    <nav>
+      <ul class="nav">
+        <i class="far fa-window-close"></i>
+        <div id="marker"></div>
+        <li class="nav__item"><a href="#about">About</a></li>
+        <li class="nav__item"><a href="#litter">Litter</a></li>
+        <li class="nav__item"><a href="#pigs">Pigs</a></li>
+        <li class="nav__item"><a href="#contact">Contact</a></li>
+        <li class="nav__item nav__social">
+          <i class="fab fa-facebook-square"></i>
+          <i class="fab fa-instagram-square"></i>
+          <i class="fab fa-youtube-square"></i>
+        </li>
+      </ul>
+
+    </nav>
+
+    <div class="hero">
+      <div class="hero__text">
+        <span>
+          <p>Guinea</p>
+        </span>
+        <span>
+          <p>Pig</p>
+        </span>
+        <span>
+          <p>Farm</p>
+        </span>
+      </div>
+      <div class="hero__image"></div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="about__content">
+      <h1>About Branding</h1>
+      <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized
+        by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble
+        that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which
+        is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to
+        distinguish.</p>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="image img1"></div>
+        <h5>Pig 1</h5>
+        <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized
+          by the charms </p>
+      </div>
+      <div class="col">
+        <div class="image img2"></div>
+        <h5>Pig 2</h5>
+        <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized
+          by the charms </p>
+      </div>
+      <div class="col">
+        <div class="image img3"></div>
+        <h5>Pig 3</h5>
+        <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized
+          by the charms </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pigs">
+    <div class="row">
+      <div class="image_border"></div>
+      <div class="image_bg">
+        <div class="img"></div>
+      </div>
+      <div class="content_box">
+        <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized
+          by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble
+          that are bound to ensue; and equal blame belongs to those</p>
+        <button class="btn btn--dark">Show More</button>
+      </div>
+    </div>
+  </section>
+  <section id="litter">
+    <h1>Recent Litter</h1>
+    <div class="row">
+      <div class="col">
+        <div class="image img1"></div>
+        <button class="btn btn--light">Show More</button>
+      </div>
+      <div class="col">
+        <div class="image img2"></div>
+        <button class="btn btn--light">Show More</button>
+      </div>
+      <div class="col">
+        <div class="image img3"></div>
+        <button class="btn btn--light">Show More</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <form action="/sendmail" method="POST">
+      <legend>Contact Us</legend>
+      <div id="info">Your email was sent successfull!</div>
+      <div class="form-group">
+        <input type="text" id="name" name="name" placeholder="Name">
+        <p class="error-text"></p>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Email">
+        <p class="error-text"></p>
+      </div>
+      <div class="form-group">
+        <textarea id="message" name="message" placeholder="Message"></textarea>
+        <p class="error-text"></p>
+      </div>
+      <button class="btn btn--dark" id="submit">Sent</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="row">
+      <div class="col">
+        <p>Hodowla Kłębuszek <br>
+          ul. Leśna 12 <br>
+          43-789 Mała Wioska</p>
+      </div>
+    </div>
+    <div class="col">+48 235 458 378 <br>
+      swinki@kontakt.pl
+    </div>
+    <div class="col"> <i class="fab fa-facebook-square"></i>
+      <i class="fab fa-instagram-square"></i>
+      <i class="fab fa-youtube-square"></i>
+    </div>
+  </footer>
+
+  <!-- <script src="bundle.js"></script> -->
+</body>
+
+</html>
